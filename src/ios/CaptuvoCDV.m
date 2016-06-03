@@ -147,6 +147,17 @@
 -(void)msrReady{
     NSLog(@"Captuvo Magstripe Reader Ready");
     [self.commandDelegate evalJs:@"captuvo.msrReady();"];
+    [self notifyConnected];
+}
+
+
+-(void)notifyConnected{
+     CDVPluginResult *result = [CDVPluginResult
+                                   resultWithStatus: CDVCommandStatus_OK
+                                   messageAsInt:-2];
+        // keep the callback valid.
+        [result setKeepCallbackAsBool:YES];
+        [self.commandDelegate sendPluginResult:result callbackId:self.batteryCallbackId];
 }
 
 //Battery

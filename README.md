@@ -10,7 +10,7 @@ NOTE: this plugin includes version 2.13.611 of the SL42 SDK.  **You must indepen
 =============
 
 This plugin is compatible with plugman.  To install, run the following from your project command line: 
-```$ cordova plugin add https://github.com/BlueFletch/cordova-plugin-honeywell-captuvo.git```
+```$ cordova plugin add https://github.com/ASAPWebTeam/cordova-plugin-honeywell-captuvo.git```
 
 
 ==============
@@ -26,7 +26,7 @@ Register for callbacks for barcode scanning and/or magnetic stripe reads:
            
            console.log("Barcode scanned: " + barcode);
            
-           //TODO: handle barcode/label type
+           //TODO: handle barcode/label type   ,  it will return 1 on first connected
        });
        //This function will send the first readable track
        captuvo.registerMagstripeCallback(function(track){
